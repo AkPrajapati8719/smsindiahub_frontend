@@ -72,26 +72,56 @@ export function Navbar() {
           : "bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800"
       )}
     >
-      {/* Top Value Banner Strip */}
-      <div className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 px-4 py-1.5 text-center text-xs font-semibold text-white">
+      {/* Top Value Banner Strip (Previous UI with 3 Centered Links) */}
+      <div className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 px-4 py-1.5 text-xs font-semibold text-white">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:inline">
-            🚀 High-Priority OTP & WhatsApp Business API Routes Available with 99.99% SLA
+          {/* Left Announcement */}
+          <span className="hidden xl:inline">
+            🚀 High-Priority OTP &amp; WhatsApp Business API Routes Available with 99.99% SLA
           </span>
-          <span className="sm:hidden">
-            🚀 Fast OTP & WhatsApp Business API Gateway
+          <span className="xl:hidden hidden sm:inline">
+            🚀 High-Priority OTP &amp; WhatsApp Gateway
           </span>
-          <div className="flex items-center gap-4 text-xs font-medium">
+
+          {/* Center: The 3 Links in Previous Clean Style */}
+          <div className="flex items-center gap-3 sm:gap-4 text-xs font-medium">
+            <Link
+              href="/business-softwares-reselling"
+              className="hover:underline flex items-center gap-1 opacity-90 hover:opacity-100 transition-opacity"
+            >
+              <Paperclip className="h-3 w-3" />
+              <span>The VAULT</span>
+            </Link>
+            <span className="opacity-40">|</span>
+            <Link
+              href="/magic-qr-code"
+              className="hover:underline flex items-center gap-1 opacity-90 hover:opacity-100 transition-opacity"
+            >
+              <Paperclip className="h-3 w-3" />
+              <span>Magic QR Code</span>
+            </Link>
+            <span className="opacity-40">|</span>
+            <Link
+              href="/seo-aeo-geo-optimization-services"
+              className="hover:underline flex items-center gap-1 opacity-90 hover:opacity-100 transition-opacity"
+            >
+              <Paperclip className="h-3 w-3" />
+              <span>SEO</span>
+            </Link>
+          </div>
+
+          {/* Right: Phone Contact & DLT */}
+          <div className="flex items-center gap-3 sm:gap-4 text-xs font-medium">
             <a
               href={`tel:${COMPANY_INFO.phones.primary}`}
               className="hover:underline flex items-center gap-1 font-bold"
             >
               📞 {COMPANY_INFO.phones.primary}
             </a>
-            <span className="opacity-60">|</span>
+            <span className="opacity-60 hidden sm:inline">|</span>
             <Link
               href="/dlt-registration"
-              className="hover:underline font-bold"
+              className="hover:underline font-bold hidden sm:inline"
             >
               DLT Assistance →
             </Link>

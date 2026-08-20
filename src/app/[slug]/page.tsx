@@ -61,6 +61,48 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return getDynamicSlugMetadata(params.slug);
 }
 
+function getServiceImage(slug: string): string {
+  switch (slug) {
+    case "seo-aeo-geo-optimization-services":
+      return "/assets/seo/seo-aeo-geo.png";
+    case "business-softwares-reselling":
+      return "/assets/img/business-softwares-reselling.png";
+    case "magic-qr-code":
+      return "/assets/img/magic-QR-code-for-positive-google-reviews.png";
+    case "two-factor-authentication":
+      return "/assets/img/Two-factor-authentication-service.png";
+    case "send-attachments-via-sms":
+      return "/assets/doodle/otp-sms-service.png";
+    case "smart-sms":
+      return "/assets/img/Smart-SMS-Service.png";
+    case "sim-based-sms-gateway":
+      return "/assets/images/sim-based-sms-gateway.png";
+    case "bulk-sms-reseller":
+    case "white-label-whatsapp-reseller-panel":
+      return "/assets/doodle/bulk-sms-reseller.png";
+    case "short-code-service-provider":
+      return "/assets/doodle/short-code.png";
+    case "long-code-service":
+      return "/assets/doodle/long-code-service.png";
+    case "voice-otp-service":
+    case "multi-level-ivr":
+      return "/assets/img/voice-sms-art.png";
+    case "missed-call-service-provider":
+      return "/assets/img/missed-call-art.png";
+    case "whatsapp-chatbot-for-edutech":
+    case "whatsapp-chatbot-for-travel-and-tourism":
+    case "banking-chatbots":
+    case "whatsapp-chatbot-for-real-estate":
+    case "whatsapp-chatbot-for-health-wellness-brands":
+      return "/assets/img/whatsapp-chatbot.png";
+    case "whatsapp-flows":
+    case "free-sms-gateway-developer-api":
+      return "/assets/img/official-whatsapp-business-api-software.png";
+    default:
+      return "/assets/img/Fast-SMS-Delivery.png";
+  }
+}
+
 export default function DynamicPage({ params }: Props) {
   const { slug } = params;
 
@@ -95,6 +137,18 @@ export default function DynamicPage({ params }: Props) {
               <Button href="/pricing" variant="outline" size="lg">
                 View Rate Cards
               </Button>
+            </div>
+
+            {/* Visual Illustration Card */}
+            <div className="pt-8 flex justify-center">
+              <div className="relative h-64 sm:h-80 w-full max-w-2xl overflow-hidden rounded-3xl bg-slate-50 p-4 shadow-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 transition-all hover:scale-[1.02]">
+                <Image
+                  src={getServiceImage(slug)}
+                  alt={formattedTitle}
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -199,7 +253,7 @@ export default function DynamicPage({ params }: Props) {
         </section>
       )}
 
-      {/* Service Hero */}
+      {/* Service Hero with High-Resolution Visual Illustration */}
       {service && (
         <section className="bg-white py-16 dark:bg-slate-950 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 max-w-5xl text-center space-y-6">
@@ -217,9 +271,43 @@ export default function DynamicPage({ params }: Props) {
                 {service.ctaText}
               </Button>
               <Button href="/pricing" variant="outline" size="lg">
-                View Pricing
+                View Pricing & Rate Cards
               </Button>
             </div>
+
+            {/* Service Visual Illustration Card */}
+            <div className="pt-8 flex justify-center">
+              <div className="relative h-64 sm:h-80 md:h-96 w-full max-w-2xl overflow-hidden rounded-3xl bg-slate-50 p-4 shadow-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 transition-all hover:scale-[1.02]">
+                <Image
+                  src={getServiceImage(service.slug)}
+                  alt={service.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Service Core Features Grid */}
+            {service.features && service.features.length > 0 && (
+              <div className="pt-12 text-left">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+                  Key Capabilities & Platform Advantages
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {service.features.map((feat, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl border border-slate-200 bg-slate-50/50 p-5 dark:border-slate-800 dark:bg-slate-900/50 flex items-start gap-3"
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                      <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-snug">
+                        {feat}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}

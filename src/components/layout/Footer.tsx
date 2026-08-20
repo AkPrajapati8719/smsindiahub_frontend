@@ -291,8 +291,32 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/free-sms-gateway-developer-api" className="hover:text-blue-600">
+                <Link
+                  href="/free-sms-gateway-developer-api"
+                  className="hover:text-blue-600"
+                >
                   International SMS API
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/business-softwares-reselling"
+                  className="hover:text-blue-600"
+                >
+                  The VAULT
+                </Link>
+              </li>
+              <li>
+                <Link href="/magic-qr-code" className="hover:text-blue-600">
+                  Magic QR Code for Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/seo-aeo-geo-optimization-services"
+                  className="hover:text-blue-600"
+                >
+                  SEO, AEO & GEO Optimization
                 </Link>
               </li>
               <li>
