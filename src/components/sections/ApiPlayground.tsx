@@ -73,9 +73,9 @@ export function ApiPlayground() {
           {/* Right Column: Code Editor Terminal */}
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-2xl">
-              {/* Terminal Window Header Bar */}
-              <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-4 py-3">
-                {/* Traffic lights */}
+              {/* Terminal Window Header Bar (2 lines on mobile, single line on desktop) */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-0 border-b border-slate-800 bg-slate-950 px-4 py-3">
+                {/* Line 1 on mobile: Traffic lights & endpoint */}
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-red-500/80" />
                   <div className="h-3 w-3 rounded-full bg-amber-500/80" />
@@ -83,24 +83,26 @@ export function ApiPlayground() {
                   <span className="ml-2 font-mono text-xs text-slate-400">POST /api/mt/SendSMS</span>
                 </div>
 
-                {/* Language Switcher Tabs */}
-                <div className="flex items-center gap-1">
-                  {endpoint.snippets.map((snip) => (
-                    <button
-                      key={snip.language}
-                      onClick={() => setActiveLang(snip.language)}
-                      className={`rounded-lg px-2.5 py-1 font-mono text-xs font-semibold transition-colors ${
-                        activeLang === snip.language
-                          ? "bg-blue-600 text-white"
-                          : "text-slate-400 hover:text-slate-200"
-                      }`}
-                    >
-                      {snip.label}
-                    </button>
-                  ))}
+                {/* Line 2 on mobile: Language Switcher Tabs & Copy button */}
+                <div className="flex items-center justify-between sm:justify-end gap-1">
+                  <div className="flex items-center gap-1">
+                    {endpoint.snippets.map((snip) => (
+                      <button
+                        key={snip.language}
+                        onClick={() => setActiveLang(snip.language)}
+                        className={`rounded-lg px-2.5 py-1 font-mono text-xs font-semibold transition-colors ${
+                          activeLang === snip.language
+                            ? "bg-blue-600 text-white"
+                            : "text-slate-400 hover:text-slate-200"
+                        }`}
+                      >
+                        {snip.label}
+                      </button>
+                    ))}
+                  </div>
                   <button
                     onClick={handleCopy}
-                    className="ml-2 flex items-center gap-1 rounded-lg bg-slate-800 px-2.5 py-1 font-mono text-xs text-slate-300 hover:bg-slate-700 transition-colors"
+                    className="ml-2 flex items-center gap-1 rounded-lg bg-slate-800 px-2.5 py-1 font-mono text-xs text-slate-300 hover:bg-slate-700 transition-colors shrink-0"
                   >
                     {copied ? (
                       <>
