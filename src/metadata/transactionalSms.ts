@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const transactionalSmsMetadata: Metadata = {
-  title: "Transactional SMS Service in India | 24x7 DND Delivery & 6-Char Header",
+  title: "Transactional SMS Gateway India | 24x7 DND Delivery & Header",
   description:
-    "Send critical alerts, invoice receipts, booking confirmations, and status updates 24/7/365 to all numbers including DND using approved 6-character sender headers.",
+    "Send critical alerts, invoice receipts & booking confirmations 24/7/365 to all numbers including DND using approved 6-character sender headers.",
   alternates: {
     canonical: `${BASE_URL}/transactional-sms/`,
   },

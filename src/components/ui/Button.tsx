@@ -67,15 +67,22 @@ export function Button({
         </a>
       );
     }
+
     return (
-      <Link href={href} className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}>
+      <Link
+        href={href}
+        className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}
+      >
         {content}
       </Link>
     );
   }
 
   return (
-    <button className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)} {...props}>
+    <button
+      className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}
+      {...props}
+    >
       {content}
     </button>
   );

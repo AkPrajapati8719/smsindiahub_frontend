@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const aboutUsMetadata: Metadata = {
-  title: "About Us | Cloud Wireless Technologies & SMSIndiaHub History",
+  title: "About SMSINDIAHUB | Leading Enterprise CPaaS Company India",
   description:
-    "Learn about SMSIndiaHub and Cloud Wireless Technologies (I) Pvt. Ltd., founded in 2008. Over 15+ years of telecom innovation, ISO 9001/27001 certifications, and 25,000+ happy clients.",
+    "Learn about SMSIndiaHub, India's trusted CPaaS telecom provider since 2012. ISO 9001/27001 certified, direct carrier binds & 25,000+ happy clients.",
   alternates: {
     canonical: `${BASE_URL}/about-us/`,
   },
   openGraph: {
-    title: "About SMSIndiaHub & Cloud Wireless Technologies (I) Pvt. Ltd.",
-    description: "Enterprise CPaaS provider founded in 2008 with ISO 9001 & 27001 certifications.",
+    title: "About SMSINDIAHUB | Enterprise Cloud Telecom Gateway",
+    description: "Discover SMSIndiaHub's mission, infrastructure, and leadership in India's CPaaS ecosystem.",
     url: `${BASE_URL}/about-us/`,
   },
 };

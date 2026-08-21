@@ -9,6 +9,7 @@ import { DltWizard } from "@/components/sections/DltWizard";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { LeadAutomationShowcase } from "@/components/sections/LeadAutomationShowcase";
 import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
+import { AeoOverviewSection } from "@/components/sections/AeoOverviewSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
@@ -29,6 +30,7 @@ export default function HomePage() {
       <PricingCalculator />
       <ApiPlayground />
       <IndustrySolutions />
+      <AeoOverviewSection />
       <DltWizard />
       <Testimonials />
       <FaqSection />

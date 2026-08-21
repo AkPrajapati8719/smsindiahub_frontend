@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const pricingMetadata: Metadata = {
-  title: "Bulk SMS Pricing & Tariff Plans in India | OTP, Transactional, Promotional, WhatsApp",
+  title: "Bulk SMS Pricing & Plans India | OTP, WhatsApp & SMS Tariff",
   description:
-    "Transparent Bulk SMS pricing in India. Promotional SMS from ₹0.10, OTP SMS from ₹0.11, Voice Calls from ₹0.13 with 100% lifetime unlimited validity and zero hidden charges.",
+    "Transparent Bulk SMS pricing in India. Promotional SMS from ₹0.10, OTP from ₹0.11 & WhatsApp API from ₹0.45. Lifetime validity & zero setup fees.",
   alternates: {
     canonical: `${BASE_URL}/pricing/`,
   },
   openGraph: {
-    title: "Transparent Bulk SMS Pricing & Tariff Calculator | SMSIndiaHub",
-    description: "Calculate wholesale SMS, OTP, WhatsApp, and Voice rates with lifetime validity.",
+    title: "Bulk SMS Pricing & Plans India | SMSIndiaHub Tariff",
+    description: "Calculate wholesale SMS, OTP, WhatsApp, and Voice rates with lifetime validity and zero hidden charges.",
     url: `${BASE_URL}/pricing/`,
   },
 };

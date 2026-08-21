@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const contactMetadata: Metadata = {
-  title: "Contact Us & Office Locations (Bhopal, Indore) | SMSIndiaHub",
+  title: "Contact SMSINDIAHUB | 24/7 Enterprise CPaaS Support India",
   description:
-    "Get in touch with SMSIndiaHub support, sales, and billing teams. Bhopal Central India HQ, Indore branch, 24/7 hotline (+91 8305781001), and WhatsApp desk.",
+    "Get in touch with SMSIndiaHub for custom enterprise CPaaS pricing, DLT registration assistance & 24/7 technical support. Call +91-8305781001.",
   alternates: {
     canonical: `${BASE_URL}/contact/`,
   },
   openGraph: {
-    title: "Contact SMSIndiaHub Sales & 24/7 Support Desk",
-    description: "Connect with our telecom consultants in Bhopal HQ and Indore branch.",
+    title: "Contact SMSINDIAHUB | Enterprise CPaaS Sales & Support",
+    description: "Get 24/7 live assistance for Bulk SMS, WhatsApp API, and DLT verification.",
     url: `${BASE_URL}/contact/`,
   },
 };

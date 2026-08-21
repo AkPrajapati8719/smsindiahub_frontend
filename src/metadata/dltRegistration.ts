@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const dltRegistrationMetadata: Metadata = {
-  title: "TRAI DLT Registration & PE-TM Chain Binding Guide | Jio, Airtel, Vi, BSNL, Tata",
+  title: "TRAI DLT Registration & PE-TM Chain Binding Guide | SMSINDIAHUB",
   description:
-    "Complete step-by-step guide for TRAI DLT Principal Entity (PE) registration, header approval, content template registration, and Telemarketer chain binding with SMSIndiaHub.",
+    "Complete step-by-step guide for TRAI DLT Principal Entity (PE) registration, header approval, template registration & chain binding with SMSIndiaHub.",
   alternates: {
     canonical: `${BASE_URL}/dlt-registration/`,
   },

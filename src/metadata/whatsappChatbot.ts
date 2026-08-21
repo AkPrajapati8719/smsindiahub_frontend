@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const whatsappChatbotMetadata: Metadata = {
-  title: "AI WhatsApp Chatbot Builder in India | Automated Support & Lead Qualification",
+  title: "AI WhatsApp Chatbot Builder India | 24/7 Lead Support",
   description:
-    "Deploy conversational AI WhatsApp Chatbots tailored for EdTech, Real Estate, Healthcare, BFSI, and E-commerce. Automate customer support and lead bookings 24/7.",
+    "Deploy conversational AI WhatsApp chatbots for Real Estate, BFSI, Healthcare & E-Commerce. Automate customer support & 24/7 lead qualification.",
   alternates: {
     canonical: `${BASE_URL}/whatsapp-chatbot/`,
   },

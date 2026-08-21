@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const rcsMessagingMetadata: Metadata = {
-  title: "RCS Business Messaging in India | Next-Gen Rich SMS & Interactive Carousels",
+  title: "RCS Business Messaging India | Next-Gen Rich SMS Partner",
   description:
-    "Google RCS Business Messaging partner in India by SMSIndiaHub. Send verified brand messages with rich media carousels, action chips, and interactive maps directly in Android SMS apps.",
+    "Google RCS Business Messaging partner in India. Send verified brand messages with rich media carousels, action chips & interactive maps on Android.",
   alternates: {
     canonical: `${BASE_URL}/rcs-messaging-services/`,
   },

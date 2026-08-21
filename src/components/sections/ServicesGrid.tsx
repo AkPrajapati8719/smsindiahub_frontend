@@ -23,6 +23,19 @@ import { Card3D } from "@/components/ui/Card3D";
 import { Badge } from "@/components/ui/Badge";
 import { SERVICES_DATA, ServiceItem } from "@/data/services";
 
+// Exactly 9 Core Enterprise Services for a Clean 3x3 Grid
+const CORE_9_SERVICE_IDS = [
+  "otp-sms",
+  "promotional-sms",
+  "transactional-sms",
+  "whatsapp-api",
+  "whatsapp-chatbot",
+  "voice-broadcasting",
+  "rcs-messaging",
+  "missed-call-service",
+  "lead-automation",
+];
+
 const SERVICE_IMAGES: Record<string, string> = {
   "otp-sms": "/assets/img/Two-factor-authentication-service.png",
   "promotional-sms": "/assets/img/fast-bulk-sms-delivery-service.png",
@@ -32,34 +45,32 @@ const SERVICE_IMAGES: Record<string, string> = {
   "rcs-messaging": "/assets/img/re-engagement-campaigns.png",
   "voice-broadcasting": "/assets/img/voice-sms-art.png",
   "missed-call-service": "/assets/img/assign-and-distribute-leads-on-missed-call.png",
-  "smart-sms": "/assets/img/Smart-SMS-Service.png",
-  "excel-plugin": "/assets/img/excel-plugins.png",
   "lead-automation": "/assets/img/IndiaMart-Lead-Automation-via-WhatsApp.png",
-  "bulk-sms-reseller": "/assets/img/become-bulk-sms-reseller.png",
 };
 
 const ICON_MAP: Record<string, React.ReactNode> = {
-  ShieldCheck: <ShieldCheck className="h-6 w-6" />,
-  Megaphone: <Megaphone className="h-6 w-6" />,
-  Send: <Send className="h-6 w-6" />,
-  MessageSquareText: <MessageSquareText className="h-6 w-6" />,
-  Bot: <Bot className="h-6 w-6" />,
-  Sparkles: <Sparkles className="h-6 w-6" />,
-  PhoneCall: <PhoneCall className="h-6 w-6" />,
-  PhoneIncoming: <PhoneIncoming className="h-6 w-6" />,
-  Link2: <Link2 className="h-6 w-6" />,
-  FileSpreadsheet: <FileSpreadsheet className="h-6 w-6" />,
-  Cpu: <Cpu className="h-6 w-6" />,
-  Users: <Users className="h-6 w-6" />,
+  ShieldCheck: <ShieldCheck className="h-5 w-5" />,
+  Megaphone: <Megaphone className="h-5 w-5" />,
+  Send: <Send className="h-5 w-5" />,
+  MessageSquareText: <MessageSquareText className="h-5 w-5" />,
+  Bot: <Bot className="h-5 w-5" />,
+  Sparkles: <Sparkles className="h-5 w-5" />,
+  PhoneCall: <PhoneCall className="h-5 w-5" />,
+  PhoneIncoming: <PhoneIncoming className="h-5 w-5" />,
+  Cpu: <Cpu className="h-5 w-5" />,
 };
 
 export function ServicesGrid() {
   const [filter, setFilter] = useState<string>("all");
 
+  const coreServices = SERVICES_DATA.filter((s) =>
+    CORE_9_SERVICE_IDS.includes(s.id)
+  );
+
   const filteredServices =
     filter === "all"
-      ? SERVICES_DATA
-      : SERVICES_DATA.filter((s) => s.category === filter);
+      ? coreServices
+      : coreServices.filter((s) => s.category === filter);
 
   return (
     <section className="bg-white py-20 dark:bg-slate-950" id="services">
@@ -72,23 +83,22 @@ export function ServicesGrid() {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Everything You Need to{" "}
             <span className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Reach & Engage Millions
+              Reach &amp; Engage Millions
             </span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            From lightning-fast OTP authentication pipelines to conversational WhatsApp bots and automated voice broadcasts, deploy your enterprise messaging stack in minutes.
+            From lightning-fast OTP authentication to conversational WhatsApp bots and automated voice broadcasts, deploy your enterprise messaging stack in minutes.
           </p>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-3">
             {[
-              { id: "all", label: "All Services" },
+              { id: "all", label: "All 9 Services" },
               { id: "sms", label: "📱 SMS Solutions" },
               { id: "whatsapp", label: "💬 WhatsApp & Bots" },
               { id: "voice", label: "📞 Voice & IVR" },
               { id: "rcs", label: "✨ RCS Next-Gen" },
               { id: "automation", label: "⚡ Lead Automation" },
-              { id: "tools", label: "🛠️ Tools & Plugins" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -105,24 +115,24 @@ export function ServicesGrid() {
           </div>
         </div>
 
-        {/* 3D Service Cards Grid */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 3x3 Service Cards Grid (Exactly 9 Compact Cards) */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
             <Card3D
               key={service.id}
-              tiltIntensity={8}
-              glowColor="rgba(37, 99, 235, 0.18)"
-              className="flex flex-col justify-between h-full group"
+              tiltIntensity={7}
+              glowColor="rgba(37, 99, 235, 0.16)"
+              className="flex flex-col justify-between h-full group p-5 rounded-2xl"
             >
               <div>
                 {/* Card Top: Icon & Badge */}
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="rounded-xl bg-gradient-to-tr from-violet-600/10 via-blue-600/10 to-cyan-600/10 p-3 text-blue-600 border border-blue-200/50 dark:border-blue-800/40 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                    {ICON_MAP[service.iconName] || <Send className="h-6 w-6" />}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="rounded-xl bg-gradient-to-tr from-violet-600/10 via-blue-600/10 to-cyan-600/10 p-2.5 text-blue-600 border border-blue-200/50 dark:border-blue-800/40 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                    {ICON_MAP[service.iconName] || <Send className="h-5 w-5" />}
                   </div>
 
                   {service.tag && (
-                    <Badge variant="radiant" size="sm">
+                    <Badge variant="radiant" size="sm" className="text-[11px] py-0.5 px-2">
                       {service.tag}
                     </Badge>
                   )}
@@ -130,7 +140,7 @@ export function ServicesGrid() {
 
                 {/* Service Visual Preview Banner */}
                 {SERVICE_IMAGES[service.id] && (
-                  <div className="relative mb-4 h-36 w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 p-2 border border-slate-100 dark:border-slate-800">
+                  <div className="relative mb-3 h-32 w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 p-2 border border-slate-100 dark:border-slate-800">
                     <Image
                       src={SERVICE_IMAGES[service.id]}
                       alt={service.title}
@@ -140,45 +150,38 @@ export function ServicesGrid() {
                   </div>
                 )}
 
-                {/* Title & Short Desc */}
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {/* Title & Short Desc (Concise 2 Lines) */}
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="mt-1.5 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
                   {service.shortDesc}
                 </p>
 
-                {/* Key Bullet Features */}
-                <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4 dark:border-slate-800/60 text-xs text-slate-600 dark:text-slate-300">
-                  {service.features.slice(0, 3).map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500 mt-0.5" />
-                      <span>{feat}</span>
+                {/* Key Bullet Features (Concise 2 Bullets) */}
+                <ul className="mt-3 space-y-1.5 border-t border-slate-100 pt-3 dark:border-slate-800/60 text-xs text-slate-600 dark:text-slate-300">
+                  {service.features.slice(0, 2).map((feat, idx) => (
+                    <li key={idx} className="flex items-start gap-1.5">
+                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-500 mt-0.5" />
+                      <span className="truncate">{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Bottom Card Footer */}
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                {service.startingPrice ? (
-                  <div>
-                    <span className="text-[10px] text-slate-400 uppercase font-semibold">Starts At</span>
-                    <div className="text-sm font-extrabold text-slate-900 dark:text-white">
-                      {service.startingPrice}
-                    </div>
-                  </div>
-                ) : (
-                  <span className="text-xs font-semibold text-emerald-600">Enterprise Ready</span>
-                )}
-
+              {/* Card Footer Link */}
+              <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between">
                 <Link
                   href={`/${service.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 group-hover:translate-x-1 transition-all"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 group-hover:translate-x-1 transition-all"
                 >
-                  <span>{service.ctaText}</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <span>Explore Service</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
+
+                <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500">
+                  Instant Setup
+                </span>
               </div>
             </Card3D>
           ))}

@@ -12,7 +12,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { INDUSTRIES_DATA, IndustryItem } from "@/data/industries";
+import { INDUSTRIES_DATA } from "@/data/industries";
 
 const INDUSTRY_IMAGES: Record<string, string> = {
   "real-estate": "/assets/img/lead-generation-for-real-estate.png",
@@ -24,15 +24,18 @@ const INDUSTRY_IMAGES: Record<string, string> = {
 };
 
 const INDUSTRY_ICONS: Record<string, React.ReactNode> = {
-  Building2: <Building2 className="h-6 w-6" />,
-  GraduationCap: <GraduationCap className="h-6 w-6" />,
-  HeartPulse: <HeartPulse className="h-6 w-6" />,
-  Landmark: <Landmark className="h-6 w-6" />,
-  ShoppingBag: <ShoppingBag className="h-6 w-6" />,
-  Car: <Car className="h-6 w-6" />,
+  Building2: <Building2 className="h-5 w-5" />,
+  GraduationCap: <GraduationCap className="h-5 w-5" />,
+  HeartPulse: <HeartPulse className="h-5 w-5" />,
+  Landmark: <Landmark className="h-5 w-5" />,
+  ShoppingBag: <ShoppingBag className="h-5 w-5" />,
+  Car: <Car className="h-5 w-5" />,
 };
 
 export function IndustrySolutions() {
+  // Exactly 6 Core Industry Cards
+  const coreIndustries = INDUSTRIES_DATA.slice(0, 6);
+
   return (
     <section className="bg-slate-50 py-20 dark:bg-slate-900/50" id="industries">
       <div className="container mx-auto px-4 sm:px-6">
@@ -51,17 +54,17 @@ export function IndustrySolutions() {
           </p>
         </div>
 
-        {/* 6 Industry Cards */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {INDUSTRIES_DATA.map((ind) => (
+        {/* Exactly 6 Clean Industry Cards with Compact 3-Line Content */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coreIndustries.map((ind) => (
             <div
               key={ind.slug}
-              className="group rounded-3xl border border-slate-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-400 hover:shadow-radiant-md dark:border-slate-800 dark:bg-slate-900 flex flex-col justify-between"
+              className="group rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm transition-all duration-300 hover:border-blue-400 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 flex flex-col justify-between"
             >
               <div>
                 {/* Visual Industry Graphic */}
                 {INDUSTRY_IMAGES[ind.slug] && (
-                  <div className="relative mb-4 h-40 w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 p-2 border border-slate-100 dark:border-slate-800">
+                  <div className="relative mb-3 h-32 w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 p-2 border border-slate-100 dark:border-slate-800">
                     <Image
                       src={INDUSTRY_IMAGES[ind.slug]}
                       alt={ind.title}
@@ -71,35 +74,45 @@ export function IndustrySolutions() {
                   </div>
                 )}
 
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="rounded-xl bg-blue-50 p-2 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
-                    {INDUSTRY_ICONS[ind.icon] || <Building2 className="h-5 w-5" />}
+                {/* Header: Icon & Title */}
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="rounded-lg bg-blue-50 p-1.5 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
+                    {INDUSTRY_ICONS[ind.icon] || <Building2 className="h-4 w-4" />}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">{ind.title}</h3>
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white truncate">
+                    {ind.title}
+                  </h3>
                 </div>
-                <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 mt-1">
+
+                {/* Tagline */}
+                <div className="text-[11px] font-semibold text-blue-600 dark:text-blue-400 truncate">
                   {ind.tagline}
                 </div>
-                <p className="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+
+                {/* Compact Description (2-3 Lines) */}
+                <p className="mt-2 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
                   {ind.description}
                 </p>
 
-                <ul className="mt-4 space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4 text-xs text-slate-700 dark:text-slate-300">
-                  {ind.solutions.map((sol, sIdx) => (
-                    <li key={sIdx} className="flex items-center gap-2">
+                {/* 2 Key Solution Bullets */}
+                <ul className="mt-3 space-y-1.5 border-t border-slate-100 dark:border-slate-800 pt-3 text-xs text-slate-700 dark:text-slate-300">
+                  {ind.solutions.slice(0, 2).map((sol, sIdx) => (
+                    <li key={sIdx} className="flex items-center gap-1.5">
                       <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                      <span>{sol}</span>
+                      <span className="truncate">{sol}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+              {/* Action Link */}
+              <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
                 <Link
                   href={`/bulk-sms-for-${ind.slug}`}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 group-hover:translate-x-1 transition-all"
                 >
-                  Explore {ind.title} Solutions →
+                  <span>Explore {ind.title.split(" ")[0]} Stack</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>

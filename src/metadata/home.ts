@@ -2,24 +2,30 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const homeMetadata: Metadata = {
-  title: "SMSINDIAHUB® | Enterprise Bulk SMS, WhatsApp Business API & Voice Gateway in India",
+  title: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
   description:
-    "SMSIndiaHub is India's leading CPaaS & business messaging provider. Send sub-2.5s OTP SMS, Promotional/Transactional Bulk SMS, official WhatsApp Business API, RCS messaging & Voice IVR with direct telecom operator connectivity.",
+    "India's leading CPaaS gateway for Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR broadcasts. 100% TRAI DLT compliant. Get free trial credits.",
   alternates: {
-    canonical: `${BASE_URL}/`,
+    canonical: "/",
   },
   openGraph: {
-    title: "SMSINDIAHUB® | Enterprise Bulk SMS, WhatsApp Business API & Voice Gateway in India",
+    title: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
     description:
-      "Enterprise CPaaS & Cloud Messaging platform in India. High-priority OTP routes, WhatsApp Business API, Voice IVR, and DLT compliance.",
+      "Enterprise CPaaS gateway for Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR broadcasts with 99.99% uptime and TRAI DLT compliance.",
     url: `${BASE_URL}/`,
     images: [
       {
         url: "/assets/img/smsindiahub-new-logo.png",
         width: 1200,
         height: 630,
-        alt: "SMSIndiaHub CPaaS Platform",
+        alt: "SMSINDIAHUB Enterprise CPaaS Platform",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
+    description:
+      "Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR with 99.99% uptime and TRAI DLT compliance.",
   },
 };

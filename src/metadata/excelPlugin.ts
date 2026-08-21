@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const excelPluginMetadata: Metadata = {
-  title: "Free Excel Bulk SMS Plugin Download | Send SMS from MS Excel Spreadsheets",
+  title: "Excel Bulk SMS Plugin Download | Send SMS via Excel",
   description:
-    "Download free SMSIndiaHub Microsoft Excel add-in. Send personalized bulk SMS directly from Excel sheets with custom column mapping, DLT template selection, and multi-lingual support.",
+    "Download free Microsoft Excel SMS add-in. Send personalized bulk SMS directly from Excel sheets with custom column mapping & DLT templates.",
   alternates: {
     canonical: `${BASE_URL}/excel-plugin/`,
   },

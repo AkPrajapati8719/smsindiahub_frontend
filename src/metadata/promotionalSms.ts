@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const promotionalSmsMetadata: Metadata = {
-  title: "Promotional Bulk SMS Provider in India | Mass Marketing Broadcast Gateway",
+  title: "Promotional Bulk SMS Provider India | Mass Marketing Gateway",
   description:
-    "Promotional Bulk SMS service provider in India. Send targeted marketing offers, festive discounts, and bulk announcements with lifetime unlimited validity and DND scrubbing.",
+    "Promotional Bulk SMS service provider in India. Send targeted marketing offers, festive discounts & bulk announcements with lifetime validity.",
   alternates: {
     canonical: `${BASE_URL}/promotional-sms/`,
   },

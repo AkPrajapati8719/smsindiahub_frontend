@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const missedCallMetadata: Metadata = {
-  title: "Missed Call Alert Service Provider in India | Zero-Cost Lead Generation Number",
+  title: "Missed Call Service Provider India | Lead Alert Gateway",
   description:
-    "Missed Call Lead Generation service in India. Dedicated 10-digit virtual numbers, instant SMS/WhatsApp auto-replies, and real-time CRM webhooks with SMSIndiaHub.",
+    "Missed Call lead generation service in India. Dedicated 10-digit virtual numbers, instant SMS & WhatsApp auto-replies with real-time CRM webhooks.",
   alternates: {
     canonical: `${BASE_URL}/missed-call-service-provider/`,
   },

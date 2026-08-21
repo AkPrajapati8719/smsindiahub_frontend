@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { BASE_URL } from "./site";
 
 export const apiIndiaMetadata: Metadata = {
-  title: "India SMS REST API Documentation & Code Snippets | SMSIndiaHub",
+  title: "SMS & WhatsApp Developer API Docs | REST & SMPP v3.4",
   description:
-    "Developer HTTP REST API documentation for sending transactional and OTP SMS in India with DLT parameters. Code snippets for Node.js, Python, PHP, Java, and cURL.",
+    "Developer-friendly REST API & SMPP v3.4 documentation. Sample code in Node.js, Python, PHP, Java & cURL with sub-2.5s OTP delivery and live webhooks.",
   alternates: {
     canonical: `${BASE_URL}/api/india/`,
   },
   openGraph: {
-    title: "SMSIndiaHub India SMS REST API Documentation",
-    description: "High-throughput HTTP REST API with multi-carrier failover and DLT parameter support.",
+    title: "SMS & WhatsApp Developer API Docs | REST & SMPP v3.4",
+    description: "Enterprise REST API and SMPP documentation with live code playgrounds.",
     url: `${BASE_URL}/api/india/`,
   },
 };

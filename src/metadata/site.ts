@@ -5,12 +5,15 @@ export const BASE_URL = "https://www.smsindiahub.in";
 
 export const DEFAULT_SITE_METADATA: Metadata = {
   metadataBase: new URL(BASE_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: "SMSINDIAHUB® | Enterprise Bulk SMS, WhatsApp Business API & Voice Gateway in India",
-    template: "%s | SMSIndiaHub",
+    default: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
+    template: "%s | SMSINDIAHUB",
   },
   description:
-    "SMSIndiaHub is India's leading CPaaS & business messaging provider. Send sub-2.5s OTP SMS, Promotional/Transactional Bulk SMS, official WhatsApp Business API, RCS messaging & Voice IVR with direct telecom operator connectivity.",
+    "India's leading CPaaS gateway for Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR broadcasts. 100% TRAI DLT compliant. Get free trial credits.",
   keywords: [
     "Bulk SMS Service Provider In India",
     "OTP SMS Provider",
@@ -42,49 +45,22 @@ export const DEFAULT_SITE_METADATA: Metadata = {
     locale: "en_IN",
     url: `${BASE_URL}/`,
     siteName: "SMSIndiaHub",
-    title: "SMSINDIAHUB® | Enterprise Bulk SMS, WhatsApp Business API & Voice Gateway in India",
+    title: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
     description:
-      "Enterprise CPaaS & Cloud Messaging platform in India. High-priority OTP routes, WhatsApp Business API, Voice IVR, and DLT compliance.",
+      "Enterprise CPaaS gateway for Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR broadcasts with 99.99% uptime and TRAI DLT compliance.",
     images: [
       {
         url: "/assets/img/smsindiahub-new-logo.png",
         width: 1200,
         height: 630,
-        alt: "SMSIndiaHub CPaaS Platform",
+        alt: "SMSINDIAHUB Enterprise CPaaS Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMSINDIAHUB® | Enterprise Bulk SMS & WhatsApp API",
-    description: "High-priority OTP routes, WhatsApp Business API, and Voice IVR with direct operator connectivity.",
-    images: ["/assets/img/smsindiahub-new-logo.png"],
-  },
-  alternates: {
-    canonical: `${BASE_URL}/`,
-  },
-  manifest: "/manifest.webmanifest",
-  category: "technology",
-  classification: "Enterprise CPaaS, Bulk SMS & WhatsApp Business Messaging",
-  appleWebApp: {
-    capable: true,
-    title: "SMSIndiaHub",
-    statusBarStyle: "default",
-  },
-  other: {
-    "geo.region": "IN-MP",
-    "geo.placename": "Bhopal",
-    "geo.position": "23.259933;77.412615",
-    "ICBM": "23.259933, 77.412615",
-    "telecom:provider": "Cloud Wireless Technologies (I) Pvt. Ltd.",
-    "telecom:trai_registered": "true",
-  },
-  icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/favicon.ico" },
-    ],
-    apple: "/apple-touch-icon.png",
-    shortcut: "/icon.png",
+    title: "Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB",
+    description:
+      "Sub-2.5s OTP SMS, Meta WhatsApp Business API & Voice IVR with 99.99% uptime and TRAI DLT compliance.",
   },
 };
