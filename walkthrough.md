@@ -97,7 +97,20 @@ Configured to match the official live website with **zero duplicate links** and 
 
 ---
 
-### 4. SEO, AEO & GEO Optimization System (95–100/100 Score)
+### 4. Omnichannel CPaaS Suite (6 Core Flagship Cards in 3x2 Grid)
+* **Section:** `src/components/sections/ServicesGrid.tsx`
+* **6 Flagship Service Cards:**
+  1. **⚡ OTP SMS Gateway:** Sub-2.5s OTP authentication, 99.99% SLA, 2FA security.
+  2. **📱 Promotional Bulk SMS:** High-speed marketing broadcasts, 100% TRAI DLT compliance.
+  3. **✉️ Transactional SMS:** 24/7 DND delivery with approved 6-character sender headers.
+  4. **💬 WhatsApp Business API:** Official Meta Cloud API partner, catalog checkout, green tick verification.
+  5. **🤖 AI WhatsApp Chatbot:** 24/7 automated customer support, lead qualification, and booking flows.
+  6. **📞 Voice Call & IVR Broadcast:** Automated MP3 voice broadcasting, multi-tier DTMF surveys.
+* **Category Filters:** `All 6 Services`, `📱 SMS Gateways`, `💬 WhatsApp Solutions`, `📞 Voice & IVR`.
+
+---
+
+### 5. SEO, AEO & GEO Optimization System (95–100/100 Score)
 * **Metadata & Canonical URLs:**
   * **Optimized Title Length:** Standardized across all 244 pages to 30–65 characters (`Bulk SMS, WhatsApp API & OTP Gateway India | SMSINDIAHUB` = 56 chars).
   * **Benefit-Driven Meta Descriptions:** 110–165 characters with key action verbs, SLAs, and DLT compliance signals.
@@ -120,7 +133,7 @@ Configured to match the official live website with **zero duplicate links** and 
 
 ---
 
-### 5. Intellectual Property & Copyright Clearance Record
+### 6. Intellectual Property & Copyright Clearance Record
 * **Text & Marketing Copy:** 100% freshly written, original technical copy with zero copied blocks.
 * **Tables & Specifications:** Public telecom standards (160-char limits, DTMF keypresses, DLT policies).
 * **Icons & UI:** MIT-licensed Lucide React icons + Unsplash commercial-use customer avatars.
@@ -129,7 +142,7 @@ Configured to match the official live website with **zero duplicate links** and 
 
 ---
 
-### 6. Dedicated Sign Up & Verification Flow (`/registration` & `/signup`)
+### 7. Dedicated Sign Up & Verification Flow (`/registration` & `/signup`)
 * **Component:** `src/components/forms/RegistrationForm.tsx`
 * **Features:**
   * **Step 1: Sign Up Details:** 10-digit number validation, legal terms checkboxes.
@@ -142,7 +155,7 @@ Configured to match the official live website with **zero duplicate links** and 
 
 ---
 
-### 7. Full 244-Route Static Pre-Rendering (`src/app/[slug]/page.tsx`)
+### 8. Full 244-Route Static Pre-Rendering (`src/app/[slug]/page.tsx`)
 * Generates static pages for **all 215+ legacy routes** from the original website, plus 30 Indian city hubs, 38 industry verticals, and developer tools.
 * **100% Zero Broken Links:** Every bookmark, Google index link, and legacy URL resolves to a custom landing page.
 

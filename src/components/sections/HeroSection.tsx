@@ -54,6 +54,15 @@ export function HeroSection() {
               </span>
             </h1>
 
+            <p className="text-base sm:text-md text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Empower your business with high-throughput{" "}
+              <strong>OTP SMS</strong>, official{" "}
+              <strong>WhatsApp Business API</strong>, next-gen{" "}
+              <strong>RCS messaging</strong>, and automated{" "}
+              <strong>Voice IVR broadcasts</strong> backed by direct Tier-1
+              telecom carrier connectivity.
+            </p>
+
             {/* Opening Short-Answer, Key Takeaway & Bottom-Line Answer Signal (AEO Top Summary) */}
             <div
               className="rounded-2xl border border-blue-200/90 bg-gradient-to-r from-blue-50/95 via-indigo-50/70 to-cyan-50/80 p-4 text-left dark:border-blue-900/50 dark:from-slate-900/90 dark:to-slate-850 shadow-sm"
@@ -65,7 +74,7 @@ export function HeroSection() {
                 <span>Executive Summary &amp; Key Takeaways</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                <strong>Bottom-Line Answer:</strong> SMSIndiaHub is India&apos;s
+                <strong>Benefit-Driven:</strong> SMSIndiaHub is India&apos;s
                 leading CPaaS gateway providing{" "}
                 <strong>sub-2.5s OTP SMS delivery</strong>, official{" "}
                 <strong>Meta WhatsApp Business API</strong>, and automated{" "}
@@ -74,15 +83,6 @@ export function HeroSection() {
                 high-growth enterprises.
               </p>
             </div>
-
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Empower your business with high-throughput{" "}
-              <strong>OTP SMS</strong>, official{" "}
-              <strong>WhatsApp Business API</strong>, next-gen{" "}
-              <strong>RCS messaging</strong>, and automated{" "}
-              <strong>Voice IVR broadcasts</strong> backed by direct Tier-1
-              telecom carrier connectivity.
-            </p>
 
             {/* Key Value Checks */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">

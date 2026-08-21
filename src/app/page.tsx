@@ -7,7 +7,6 @@ import { PricingCalculator } from "@/components/sections/PricingCalculator";
 import { ApiPlayground } from "@/components/sections/ApiPlayground";
 import { DltWizard } from "@/components/sections/DltWizard";
 import { StatsSection } from "@/components/sections/StatsSection";
-import { LeadAutomationShowcase } from "@/components/sections/LeadAutomationShowcase";
 import { IndustrySolutions } from "@/components/sections/IndustrySolutions";
 import { AeoOverviewSection } from "@/components/sections/AeoOverviewSection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <ServicesGrid />
       <StatsSection />
       <WhatsAppSimulator />
-      <LeadAutomationShowcase />
       <PricingCalculator />
       <ApiPlayground />
       <IndustrySolutions />

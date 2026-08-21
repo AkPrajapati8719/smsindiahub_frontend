@@ -11,29 +11,21 @@ import {
   Bot,
   Sparkles,
   PhoneCall,
-  PhoneIncoming,
-  Link2,
-  FileSpreadsheet,
-  Cpu,
-  Users,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
 import { Card3D } from "@/components/ui/Card3D";
 import { Badge } from "@/components/ui/Badge";
-import { SERVICES_DATA, ServiceItem } from "@/data/services";
+import { SERVICES_DATA } from "@/data/services";
 
-// Exactly 9 Core Enterprise Services for a Clean 3x3 Grid
-const CORE_9_SERVICE_IDS = [
+// Exactly 6 Core Enterprise Services for a Clean 3x2 Grid
+const CORE_6_SERVICE_IDS = [
   "otp-sms",
   "promotional-sms",
   "transactional-sms",
   "whatsapp-api",
   "whatsapp-chatbot",
   "voice-broadcasting",
-  "rcs-messaging",
-  "missed-call-service",
-  "lead-automation",
 ];
 
 const SERVICE_IMAGES: Record<string, string> = {
@@ -42,10 +34,7 @@ const SERVICE_IMAGES: Record<string, string> = {
   "transactional-sms": "/assets/img/transaction-confirmation.png",
   "whatsapp-api": "/assets/img/official-whatsapp-business-api-software.png",
   "whatsapp-chatbot": "/assets/img/whatsapp-chatbot.png",
-  "rcs-messaging": "/assets/img/re-engagement-campaigns.png",
   "voice-broadcasting": "/assets/img/voice-sms-art.png",
-  "missed-call-service": "/assets/img/assign-and-distribute-leads-on-missed-call.png",
-  "lead-automation": "/assets/img/IndiaMart-Lead-Automation-via-WhatsApp.png",
 };
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -54,17 +43,14 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Send: <Send className="h-5 w-5" />,
   MessageSquareText: <MessageSquareText className="h-5 w-5" />,
   Bot: <Bot className="h-5 w-5" />,
-  Sparkles: <Sparkles className="h-5 w-5" />,
   PhoneCall: <PhoneCall className="h-5 w-5" />,
-  PhoneIncoming: <PhoneIncoming className="h-5 w-5" />,
-  Cpu: <Cpu className="h-5 w-5" />,
 };
 
 export function ServicesGrid() {
   const [filter, setFilter] = useState<string>("all");
 
   const coreServices = SERVICES_DATA.filter((s) =>
-    CORE_9_SERVICE_IDS.includes(s.id)
+    CORE_6_SERVICE_IDS.includes(s.id)
   );
 
   const filteredServices =
@@ -86,19 +72,17 @@ export function ServicesGrid() {
               Reach &amp; Engage Millions
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
             From lightning-fast OTP authentication to conversational WhatsApp bots and automated voice broadcasts, deploy your enterprise messaging stack in minutes.
           </p>
 
           {/* Category Filter Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-3">
             {[
-              { id: "all", label: "All 9 Services" },
-              { id: "sms", label: "📱 SMS Solutions" },
-              { id: "whatsapp", label: "💬 WhatsApp & Bots" },
+              { id: "all", label: "All 6 Services" },
+              { id: "sms", label: "📱 SMS Gateways" },
+              { id: "whatsapp", label: "💬 WhatsApp Solutions" },
               { id: "voice", label: "📞 Voice & IVR" },
-              { id: "rcs", label: "✨ RCS Next-Gen" },
-              { id: "automation", label: "⚡ Lead Automation" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -115,7 +99,7 @@ export function ServicesGrid() {
           </div>
         </div>
 
-        {/* 3x3 Service Cards Grid (Exactly 9 Compact Cards) */}
+        {/* 3x2 Service Cards Grid (Exactly 6 Core Cards) */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
             <Card3D
