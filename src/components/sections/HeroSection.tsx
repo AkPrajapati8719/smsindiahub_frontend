@@ -3,24 +3,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  ShieldCheck,
-  Zap,
-  MessageSquare,
-  PhoneCall,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, ShieldCheck, Zap, MessageSquare, PhoneCall, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card3D } from "@/components/ui/Card3D";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState<"otp" | "whatsapp" | "voice">(
-    "otp",
-  );
+  const [activeTab, setActiveTab] = useState<"otp" | "whatsapp" | "voice">("otp");
 
   return (
     <section className="relative overflow-hidden bg-white pt-12 pb-20 dark:bg-slate-950 md:pt-16 md:pb-28">
@@ -37,13 +27,9 @@ export function HeroSection() {
             {/* Top Pill Status Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-bold text-blue-700 backdrop-blur-sm dark:border-blue-900/60 dark:bg-blue-950/50 dark:text-blue-300">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>
-                India&apos;s #1 Enterprise CPaaS & Cloud Messaging Platform
-              </span>
+              <span>India&apos;s #1 Enterprise CPaaS & Cloud Messaging Platform</span>
               <span className="text-blue-400">|</span>
-              <span className="text-violet-600 dark:text-violet-400">
-                Sub-2.5s OTP SLA
-              </span>
+              <span className="text-violet-600 dark:text-violet-400">Sub-2.5s OTP SLA</span>
             </div>
 
             {/* Radiant Main Headline Aligned with Title Tag */}
@@ -54,13 +40,23 @@ export function HeroSection() {
               </span>
             </h1>
 
+            {/* Opening Short-Answer, Key Takeaway & Bottom-Line Answer Signal (AEO Top Summary) */}
+            <div
+              className="rounded-2xl border border-blue-200/90 bg-gradient-to-r from-blue-50/95 via-indigo-50/70 to-cyan-50/80 p-4 text-left dark:border-blue-900/50 dark:from-slate-900/90 dark:to-slate-850 shadow-sm"
+              role="region"
+              aria-label="Executive Summary and Key Takeaways"
+            >
+              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-blue-700 dark:text-blue-300 mb-1.5">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>Executive Summary &amp; Key Takeaways</span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                <strong>Bottom-Line Answer:</strong> SMSIndiaHub is India&apos;s leading CPaaS gateway providing <strong>sub-2.5s OTP SMS delivery</strong>, official <strong>Meta WhatsApp Business API</strong>, and automated <strong>Voice IVR broadcasts</strong> with 99.99% uptime SLA and 100% TRAI DLT compliance for developers, BFSI, E-commerce, and high-growth enterprises.
+              </p>
+            </div>
+
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Empower your business with high-throughput{" "}
-              <strong>OTP SMS</strong>, official{" "}
-              <strong>WhatsApp Business API</strong>, next-gen{" "}
-              <strong>RCS messaging</strong>, and automated{" "}
-              <strong>Voice IVR broadcasts</strong> backed by direct Tier-1
-              telecom carrier connectivity.
+              Empower your business with high-throughput <strong>OTP SMS</strong>, official <strong>WhatsApp Business API</strong>, next-gen <strong>RCS messaging</strong>, and automated <strong>Voice IVR broadcasts</strong> backed by direct Tier-1 telecom carrier connectivity.
             </p>
 
             {/* Key Value Checks */}
@@ -166,9 +162,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Interactive 3D Phone Simulator + Executive Key Takeaways Below It */}
-          <div className="lg:col-span-5 flex flex-col items-center gap-5">
-            {/* 3D Phone & Channel Simulator Card */}
+          {/* Right Column: Interactive 3D Phone Simulator */}
+          <div className="lg:col-span-5 flex justify-center">
             <Card3D
               tiltIntensity={10}
               glowColor="rgba(139, 92, 246, 0.25)"
@@ -322,23 +317,6 @@ export function HeroSection() {
                 </Link>
               </div>
             </Card3D>
-
-            {/* Executive Top Summary / Key Takeaway Card (Shifted to Right Column below Simulator) */}
-            <div className="w-full max-w-md rounded-2xl border border-blue-100/90 bg-gradient-to-r from-blue-50/90 via-indigo-50/60 to-cyan-50/80 p-4 text-left dark:border-blue-900/40 dark:from-slate-900/90 dark:to-slate-850 shadow-sm transition-all hover:shadow-md">
-              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-blue-700 dark:text-blue-300 mb-1">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Executive Summary &amp; Key Takeaways</span>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                <strong>Bottom-Line Answer:</strong> SMSIndiaHub is India&apos;s
-                leading CPaaS gateway providing{" "}
-                <strong>sub-2.5s OTP SMS delivery</strong>, official{" "}
-                <strong>Meta WhatsApp Business API</strong> solutions, and
-                automated <strong>Voice IVR broadcasts</strong> with 99.99%
-                uptime and 100% TRAI DLT compliance for developers, BFSI,
-                E-commerce, and high-growth enterprises.
-              </p>
-            </div>
           </div>
         </div>
       </div>
