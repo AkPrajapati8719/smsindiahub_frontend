@@ -170,19 +170,19 @@ export function Navbar() {
 
             {activeDropdown === "sms" && (
               <div className="absolute right-0 sm:left-0 top-full pt-2 flex">
-                {/* Main SMS Dropdown Card */}
-                <div className="w-56 rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                {/* Main SMS Dropdown Card (Expanded Width w-72) */}
+                <div className="w-72 rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
                   {/* Send SMS Submenu Trigger */}
                   <div
                     onMouseEnter={() => setActiveSubmenu("send-sms")}
                     className={cn(
-                      "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold cursor-pointer transition-colors",
+                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors",
                       activeSubmenu === "send-sms"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
                         : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
                     )}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       <span>Send SMS</span>
                     </div>
@@ -193,13 +193,13 @@ export function Navbar() {
                   <div
                     onMouseEnter={() => setActiveSubmenu("receive-sms")}
                     className={cn(
-                      "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold cursor-pointer transition-colors",
+                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors mt-1",
                       activeSubmenu === "receive-sms"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
                         : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
                     )}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <Mail className="h-4 w-4 text-slate-500 dark:text-slate-400" />
                       <span>Receive SMS</span>
                     </div>
@@ -210,16 +210,16 @@ export function Navbar() {
                   <Link
                     href="/bulk-sms-reseller"
                     onMouseEnter={() => setActiveSubmenu(null)}
-                    className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors mt-1"
                   >
                     <Users className="h-4 w-4 text-slate-500 dark:text-slate-400" />
                     <span>Bulk SMS Reseller</span>
                   </Link>
                 </div>
 
-                {/* Send SMS Flyout Submenu to the Left */}
+                {/* Send SMS Flyout Submenu to the Left (Expanded Width w-72) */}
                 {activeSubmenu === "send-sms" && (
-                  <div className="absolute right-full top-2 mr-1 w-64 rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-2 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/otp-sms-service-provider"
@@ -288,9 +288,9 @@ export function Navbar() {
                   </div>
                 )}
 
-                {/* Receive SMS Flyout Submenu to the Left */}
+                {/* Receive SMS Flyout Submenu to the Left (Expanded Width w-72) */}
                 {activeSubmenu === "receive-sms" && (
-                  <div className="absolute right-full top-12 mr-1 w-56 rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-12 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/short-code-service-provider"
@@ -313,7 +313,7 @@ export function Navbar() {
             )}
           </div>
 
-          {/* 2. Call Dropdown (Each item has its own distinct route) */}
+          {/* 2. Call Dropdown (Expanded Width w-72) */}
           <div
             className="relative"
             onMouseEnter={() => setActiveDropdown("call")}
@@ -330,8 +330,8 @@ export function Navbar() {
             </button>
 
             {activeDropdown === "call" && (
-              <div className="absolute left-0 top-full pt-2 w-56">
-                <div className="rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+              <div className="absolute left-0 top-full pt-2 w-72">
+                <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                   <div className="space-y-0.5">
                     <Link
                       href="/voice-otp-service"
@@ -367,7 +367,7 @@ export function Navbar() {
             )}
           </div>
 
-          {/* 3. WhatsApp Dropdown (Green Accent with Flyout Submenu - Each child has its own distinct route) */}
+          {/* 3. WhatsApp Dropdown (Expanded Width w-72) */}
           <div
             className="relative"
             onMouseEnter={() => {
@@ -391,19 +391,19 @@ export function Navbar() {
 
             {activeDropdown === "whatsapp" && (
               <div className="absolute right-0 sm:left-0 top-full pt-2 flex">
-                {/* Main WhatsApp Dropdown Card */}
-                <div className="w-64 rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                {/* Main WhatsApp Dropdown Card (Expanded Width w-72) */}
+                <div className="w-72 rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
                   {/* Industries Flyout Submenu Trigger */}
                   <div
                     onMouseEnter={() => setActiveSubmenu("industries")}
                     className={cn(
-                      "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold cursor-pointer transition-colors",
+                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors",
                       activeSubmenu === "industries"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
                         : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
                     )}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <Building2 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       <span>Industries</span>
                     </div>
@@ -411,7 +411,7 @@ export function Navbar() {
                   </div>
 
                   {/* Main WhatsApp Items with Distinct Routes */}
-                  <div className="space-y-0.5 mt-0.5">
+                  <div className="space-y-0.5 mt-1">
                     <Link
                       href="/whatsapp-business-api"
                       onMouseEnter={() => setActiveSubmenu(null)}
@@ -447,9 +447,9 @@ export function Navbar() {
                   </div>
                 </div>
 
-                {/* Industries Flyout Submenu to the Left (Each industry has its own distinct route) */}
+                {/* Industries Flyout Submenu to the Left (Expanded Width w-72) */}
                 {activeSubmenu === "industries" && (
-                  <div className="absolute right-full top-2 mr-1 w-56 rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-2 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/whatsapp-chatbot-for-edutech"
@@ -501,7 +501,7 @@ export function Navbar() {
             RCS
           </Link>
 
-          {/* 5. APIs Dropdown (Distinct routes) */}
+          {/* 5. APIs Dropdown (Expanded Width w-72) */}
           <div
             className="relative"
             onMouseEnter={() => setActiveDropdown("apis")}
@@ -518,8 +518,8 @@ export function Navbar() {
             </button>
 
             {activeDropdown === "apis" && (
-              <div className="absolute left-0 top-full pt-2 w-56">
-                <div className="rounded-xl border border-slate-200/90 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+              <div className="absolute left-0 top-full pt-2 w-72">
+                <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                   <div className="space-y-0.5">
                     <Link
                       href="/api/india"
@@ -583,7 +583,6 @@ export function Navbar() {
 
         {/* Right Action Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <ThemeToggle />
           <Link
             href="/clients"
             className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-bold text-slate-700 hover:border-blue-500 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 transition-colors"
@@ -597,7 +596,6 @@ export function Navbar() {
 
         {/* Mobile Hamburger Button */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="rounded-xl p-2 text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
