@@ -40,7 +40,9 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>(
+    {},
+  );
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -69,7 +71,7 @@ export function Navbar() {
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
           ? "bg-white/95 shadow-sm backdrop-blur-md dark:bg-slate-950/95 dark:border-b dark:border-slate-800"
-          : "bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800"
+          : "bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800",
       )}
     >
       {/* Top Value Banner Strip (Previous UI with 3 Centered Links) */}
@@ -77,7 +79,8 @@ export function Navbar() {
         <div className="container mx-auto flex items-center justify-between">
           {/* Left Announcement */}
           <span className="hidden xl:inline">
-            🚀 High-Priority OTP &amp; WhatsApp Business API Routes Available with 99.99% SLA
+            🚀 High-Priority OTP &amp; WhatsApp Business API Routes Available
+            with 99.99% SLA
           </span>
           <span className="xl:hidden hidden sm:inline">
             🚀 High-Priority OTP &amp; WhatsApp Gateway
@@ -161,7 +164,7 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1 px-2.5 py-2 text-sm font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors",
-                activeDropdown === "sms" && "text-blue-600 dark:text-blue-400"
+                activeDropdown === "sms" && "text-blue-600 dark:text-blue-400",
               )}
             >
               <span>SMS</span>
@@ -170,141 +173,141 @@ export function Navbar() {
 
             {activeDropdown === "sms" && (
               <div className="absolute right-0 sm:left-0 top-full pt-2 flex">
-                {/* Main SMS Dropdown Card (Expanded Width w-72) */}
-                <div className="w-72 rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                {/* Main SMS Dropdown Card (Expanded Width w-80 min-w-[280px] with whitespace-nowrap) */}
+                <div className="w-80 min-w-[280px] rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
                   {/* Send SMS Submenu Trigger */}
                   <div
                     onMouseEnter={() => setActiveSubmenu("send-sms")}
                     className={cn(
-                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors",
+                      "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-bold cursor-pointer transition-colors whitespace-nowrap",
                       activeSubmenu === "send-sms"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800",
                     )}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                      <span>Send SMS</span>
+                    <div className="flex items-center gap-3 whitespace-nowrap">
+                      <Mail className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
+                      <span className="whitespace-nowrap">Send SMS</span>
                     </div>
-                    <ChevronLeft className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <ChevronLeft className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
                   </div>
 
                   {/* Receive SMS Submenu Trigger */}
                   <div
                     onMouseEnter={() => setActiveSubmenu("receive-sms")}
                     className={cn(
-                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors mt-1",
+                      "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-bold cursor-pointer transition-colors mt-1 whitespace-nowrap",
                       activeSubmenu === "receive-sms"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800",
                     )}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <Mail className="h-4 w-4 text-slate-500 dark:text-slate-400" />
-                      <span>Receive SMS</span>
+                    <div className="flex items-center gap-3 whitespace-nowrap">
+                      <Mail className="h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" />
+                      <span className="whitespace-nowrap">Receive SMS</span>
                     </div>
-                    <ChevronLeft className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <ChevronLeft className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
                   </div>
 
                   {/* Bulk SMS Reseller (Distinct Route: /bulk-sms-reseller/) */}
                   <Link
                     href="/bulk-sms-reseller"
                     onMouseEnter={() => setActiveSubmenu(null)}
-                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors mt-1"
+                    className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors mt-1 whitespace-nowrap"
                   >
-                    <Users className="h-4 w-4 text-slate-500 dark:text-slate-400" />
-                    <span>Bulk SMS Reseller</span>
+                    <Users className="h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" />
+                    <span className="whitespace-nowrap">Bulk SMS Reseller</span>
                   </Link>
                 </div>
 
-                {/* Send SMS Flyout Submenu to the Left (Expanded Width w-72) */}
+                {/* Send SMS Flyout Submenu to the Left (Reduced Compact Width w-56) */}
                 {activeSubmenu === "send-sms" && (
-                  <div className="absolute right-full top-2 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-1 mr-1.5 w-56 rounded-xl border border-slate-200/90 bg-white p-1.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/otp-sms-service-provider"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <MessageSquare className="h-3.5 w-3.5 text-slate-400" />
-                        <span>OTP SMS</span>
+                        <MessageSquare className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">OTP SMS</span>
                       </Link>
                       <Link
                         href="/two-factor-authentication"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <MessageSquare className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Two Factor (2FA)</span>
+                        <MessageSquare className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Two Factor (2FA)</span>
                       </Link>
                       <Link
                         href="/promotional-sms"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Mail className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Promotional SMS</span>
+                        <Mail className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Promotional SMS</span>
                       </Link>
                       <Link
                         href="/transactional-sms"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Mail className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Transactional SMS</span>
+                        <Mail className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Transactional SMS</span>
                       </Link>
                       <Link
                         href="/excel-plugin"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <FileSpreadsheet className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Free Excel Plugin</span>
+                        <FileSpreadsheet className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Free Excel Plugin</span>
                       </Link>
                       <Link
                         href="/send-attachments-via-sms"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Paperclip className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Send Attachments</span>
+                        <Paperclip className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Send Attachments</span>
                       </Link>
                       <Link
                         href="/smart-sms"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Settings className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Smart SMS</span>
+                        <Settings className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Smart SMS</span>
                       </Link>
                       <Link
                         href="/sim-based-sms-gateway"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Smartphone className="h-3.5 w-3.5 text-slate-400" />
-                        <span>SIM Based SMS</span>
+                        <Smartphone className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">SIM Based SMS</span>
                       </Link>
                       <Link
                         href="/bulk-sms-for-education"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <GraduationCap className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Smart School</span>
+                        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Smart School</span>
                       </Link>
                     </div>
                   </div>
                 )}
 
-                {/* Receive SMS Flyout Submenu to the Left (Expanded Width w-72) */}
+                {/* Receive SMS Flyout Submenu to the Left (Reduced Compact Width w-52) */}
                 {activeSubmenu === "receive-sms" && (
-                  <div className="absolute right-full top-12 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-12 mr-1.5 w-52 rounded-xl border border-slate-200/90 bg-white p-1.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/short-code-service-provider"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Shuffle className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Short Code Service</span>
+                        <Shuffle className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Short Code Service</span>
                       </Link>
                       <Link
                         href="/long-code-service"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Shuffle className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Long Code Service</span>
+                        <Shuffle className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Long Code Service</span>
                       </Link>
                     </div>
                   </div>
@@ -313,7 +316,7 @@ export function Navbar() {
             )}
           </div>
 
-          {/* 2. Call Dropdown (Expanded Width w-72) */}
+          {/* 2. Call Dropdown (Expanded Width w-80 min-w-[260px]) */}
           <div
             className="relative"
             onMouseEnter={() => setActiveDropdown("call")}
@@ -322,7 +325,7 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1 px-2.5 py-2 text-sm font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors",
-                activeDropdown === "call" && "text-blue-600 dark:text-blue-400"
+                activeDropdown === "call" && "text-blue-600 dark:text-blue-400",
               )}
             >
               <span>Call</span>
@@ -330,36 +333,36 @@ export function Navbar() {
             </button>
 
             {activeDropdown === "call" && (
-              <div className="absolute left-0 top-full pt-2 w-72">
+              <div className="absolute left-0 top-full pt-2 w-80 min-w-[260px]">
                 <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                   <div className="space-y-0.5">
                     <Link
                       href="/voice-otp-service"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <Mic className="h-3.5 w-3.5 text-slate-400" />
-                      <span>Voice OTP Service</span>
+                      <Mic className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">Voice OTP Service</span>
                     </Link>
                     <Link
                       href="/voice-call-service-provider"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <Phone className="h-3.5 w-3.5 text-slate-400" />
-                      <span>Voice Call Service</span>
+                      <Phone className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">Voice Call Service</span>
                     </Link>
                     <Link
                       href="/missed-call-service-provider"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <RotateCcw className="h-3.5 w-3.5 text-slate-400" />
-                      <span>Missed Call Service</span>
+                      <RotateCcw className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">Missed Call Service</span>
                     </Link>
                     <Link
                       href="/multi-level-ivr"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <Building className="h-3.5 w-3.5 text-slate-400" />
-                      <span>Multi Tier IVR</span>
+                      <Building className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">Multi Tier IVR</span>
                     </Link>
                   </div>
                 </div>
@@ -367,7 +370,7 @@ export function Navbar() {
             )}
           </div>
 
-          {/* 3. WhatsApp Dropdown (Expanded Width w-72) */}
+          {/* 3. WhatsApp Dropdown (Expanded Width w-80 min-w-[280px]) */}
           <div
             className="relative"
             onMouseEnter={() => {
@@ -382,7 +385,7 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1 px-2.5 py-2 text-sm font-bold text-[#25D366] hover:text-emerald-600 transition-colors",
-                activeDropdown === "whatsapp" && "text-emerald-600"
+                activeDropdown === "whatsapp" && "text-emerald-600",
               )}
             >
               <span>WhatsApp</span>
@@ -391,23 +394,23 @@ export function Navbar() {
 
             {activeDropdown === "whatsapp" && (
               <div className="absolute right-0 sm:left-0 top-full pt-2 flex">
-                {/* Main WhatsApp Dropdown Card (Expanded Width w-72) */}
-                <div className="w-72 rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                {/* Main WhatsApp Dropdown Card (Expanded Width w-80 min-w-[280px]) */}
+                <div className="w-80 min-w-[280px] rounded-2xl border border-slate-200/90 bg-white p-3 shadow-xl dark:border-slate-800 dark:bg-slate-900">
                   {/* Industries Flyout Submenu Trigger */}
                   <div
                     onMouseEnter={() => setActiveSubmenu("industries")}
                     className={cn(
-                      "flex items-center justify-between rounded-xl px-3.5 py-3 text-sm font-bold cursor-pointer transition-colors",
+                      "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-bold cursor-pointer transition-colors whitespace-nowrap",
                       activeSubmenu === "industries"
                         ? "bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"
-                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800",
                     )}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <Building2 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                      <span>Industries</span>
+                    <div className="flex items-center gap-3 whitespace-nowrap">
+                      <Building2 className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
+                      <span className="whitespace-nowrap font-bold">Industries</span>
                     </div>
-                    <ChevronLeft className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <ChevronLeft className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
                   </div>
 
                   {/* Main WhatsApp Items with Distinct Routes */}
@@ -415,76 +418,76 @@ export function Navbar() {
                     <Link
                       href="/whatsapp-business-api"
                       onMouseEnter={() => setActiveSubmenu(null)}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors"
+                      className="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors whitespace-nowrap"
                     >
-                      <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
-                      <span>WhatsApp Business API</span>
+                      <MessageSquare className="h-4 w-4 shrink-0 text-emerald-500" />
+                      <span className="whitespace-nowrap">WhatsApp Business API</span>
                     </Link>
                     <Link
                       href="/whatsapp-chatbot"
                       onMouseEnter={() => setActiveSubmenu(null)}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors"
+                      className="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors whitespace-nowrap"
                     >
-                      <Bot className="h-3.5 w-3.5 text-emerald-500" />
-                      <span>WhatsApp Chatbot</span>
+                      <Bot className="h-4 w-4 shrink-0 text-emerald-500" />
+                      <span className="whitespace-nowrap">WhatsApp Chatbot</span>
                     </Link>
                     <Link
                       href="/whatsapp-flows"
                       onMouseEnter={() => setActiveSubmenu(null)}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors"
+                      className="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors whitespace-nowrap"
                     >
-                      <Share2 className="h-3.5 w-3.5 text-emerald-500" />
-                      <span>WhatsApp Flows</span>
+                      <Share2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                      <span className="whitespace-nowrap">WhatsApp Flows</span>
                     </Link>
                     <Link
                       href="/white-label-whatsapp-reseller-panel"
                       onMouseEnter={() => setActiveSubmenu(null)}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors"
+                      className="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors whitespace-nowrap"
                     >
-                      <Users className="h-3.5 w-3.5 text-emerald-500" />
-                      <span>WhatsApp Reseller</span>
+                      <Users className="h-4 w-4 shrink-0 text-emerald-500" />
+                      <span className="whitespace-nowrap">WhatsApp Reseller</span>
                     </Link>
                   </div>
                 </div>
 
-                {/* Industries Flyout Submenu to the Left (Expanded Width w-72) */}
+                {/* Industries Flyout Submenu to the Left (Reduced Compact Width w-44) */}
                 {activeSubmenu === "industries" && (
-                  <div className="absolute right-full top-2 mr-1.5 w-72 rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
+                  <div className="absolute right-full top-1 mr-1.5 w-44 rounded-xl border border-slate-200/90 bg-white p-1.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                     <div className="space-y-0.5">
                       <Link
                         href="/whatsapp-chatbot-for-edutech"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <GraduationCap className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Education</span>
+                        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Education</span>
                       </Link>
                       <Link
                         href="/whatsapp-chatbot-for-travel-and-tourism"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Train className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Travel</span>
+                        <Train className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Travel</span>
                       </Link>
                       <Link
                         href="/banking-chatbots"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Landmark className="h-3.5 w-3.5 text-slate-400" />
-                        <span>BSFI</span>
+                        <Landmark className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">BSFI</span>
                       </Link>
                       <Link
                         href="/whatsapp-chatbot-for-real-estate"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <Home className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Real Estate</span>
+                        <Home className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Real Estate</span>
                       </Link>
                       <Link
                         href="/whatsapp-chatbot-for-health-wellness-brands"
-                        className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                       >
-                        <HeartPulse className="h-3.5 w-3.5 text-slate-400" />
-                        <span>Healthcare</span>
+                        <HeartPulse className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                        <span className="whitespace-nowrap">Healthcare</span>
                       </Link>
                     </div>
                   </div>
@@ -501,7 +504,7 @@ export function Navbar() {
             RCS
           </Link>
 
-          {/* 5. APIs Dropdown (Expanded Width w-72) */}
+          {/* 5. APIs Dropdown (Expanded Width w-80 min-w-[260px]) */}
           <div
             className="relative"
             onMouseEnter={() => setActiveDropdown("apis")}
@@ -510,7 +513,7 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1 px-2.5 py-2 text-sm font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors",
-                activeDropdown === "apis" && "text-blue-600 dark:text-blue-400"
+                activeDropdown === "apis" && "text-blue-600 dark:text-blue-400",
               )}
             >
               <span>APIs</span>
@@ -518,29 +521,29 @@ export function Navbar() {
             </button>
 
             {activeDropdown === "apis" && (
-              <div className="absolute left-0 top-full pt-2 w-72">
+              <div className="absolute left-0 top-full pt-2 w-80 min-w-[260px]">
                 <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5 shadow-xl dark:border-slate-800 dark:bg-slate-900 animate-in fade-in duration-150">
                   <div className="space-y-0.5">
                     <Link
                       href="/api/india"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <Settings className="h-3.5 w-3.5 text-slate-400" />
-                      <span>India</span>
+                      <Settings className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">India</span>
                     </Link>
                     <Link
                       href="/free-sms-gateway-developer-api"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors whitespace-nowrap"
                     >
-                      <Code2 className="h-3.5 w-3.5 text-slate-400" />
-                      <span>International</span>
+                      <Code2 className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                      <span className="whitespace-nowrap">International</span>
                     </Link>
                     <Link
                       href="/whatsapp-business-api"
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-emerald-400 transition-colors whitespace-nowrap"
                     >
-                      <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
-                      <span>Whatsapp API</span>
+                      <MessageSquare className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+                      <span className="whitespace-nowrap">Whatsapp API</span>
                     </Link>
                   </div>
                 </div>
@@ -620,7 +623,7 @@ export function Navbar() {
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 transition-transform",
-                    mobileExpanded["sms"] && "rotate-180"
+                    mobileExpanded["sms"] && "rotate-180",
                   )}
                 />
               </button>
@@ -630,10 +633,16 @@ export function Navbar() {
                     Send SMS
                   </div>
                   <div className="pl-2 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-                    <Link href="/otp-sms-service-provider" className="block py-1">
+                    <Link
+                      href="/otp-sms-service-provider"
+                      className="block py-1"
+                    >
                       OTP SMS
                     </Link>
-                    <Link href="/two-factor-authentication" className="block py-1">
+                    <Link
+                      href="/two-factor-authentication"
+                      className="block py-1"
+                    >
                       Two Factor (2FA)
                     </Link>
                     <Link href="/promotional-sms" className="block py-1">
@@ -645,7 +654,10 @@ export function Navbar() {
                     <Link href="/excel-plugin" className="block py-1">
                       Free Excel Plugin
                     </Link>
-                    <Link href="/send-attachments-via-sms" className="block py-1">
+                    <Link
+                      href="/send-attachments-via-sms"
+                      className="block py-1"
+                    >
                       Send Attachments
                     </Link>
                     <Link href="/smart-sms" className="block py-1">
@@ -663,7 +675,10 @@ export function Navbar() {
                     Receive SMS
                   </div>
                   <div className="pl-2 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-                    <Link href="/short-code-service-provider" className="block py-1">
+                    <Link
+                      href="/short-code-service-provider"
+                      className="block py-1"
+                    >
                       Short Code Service
                     </Link>
                     <Link href="/long-code-service" className="block py-1">
@@ -671,7 +686,10 @@ export function Navbar() {
                     </Link>
                   </div>
 
-                  <Link href="/bulk-sms-reseller" className="block pt-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <Link
+                    href="/bulk-sms-reseller"
+                    className="block pt-2 text-xs font-bold text-slate-700 dark:text-slate-300"
+                  >
                     Bulk SMS Reseller
                   </Link>
                 </div>
@@ -688,7 +706,7 @@ export function Navbar() {
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 transition-transform",
-                    mobileExpanded["call"] && "rotate-180"
+                    mobileExpanded["call"] && "rotate-180",
                   )}
                 />
               </button>
@@ -697,10 +715,16 @@ export function Navbar() {
                   <Link href="/voice-otp-service" className="block py-1">
                     Voice OTP Service
                   </Link>
-                  <Link href="/voice-call-service-provider" className="block py-1">
+                  <Link
+                    href="/voice-call-service-provider"
+                    className="block py-1"
+                  >
                     Voice Call Service
                   </Link>
-                  <Link href="/missed-call-service-provider" className="block py-1">
+                  <Link
+                    href="/missed-call-service-provider"
+                    className="block py-1"
+                  >
                     Missed Call Service
                   </Link>
                   <Link href="/multi-level-ivr" className="block py-1">
@@ -720,7 +744,7 @@ export function Navbar() {
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 text-[#25D366] transition-transform",
-                    mobileExpanded["whatsapp"] && "rotate-180"
+                    mobileExpanded["whatsapp"] && "rotate-180",
                   )}
                 />
               </button>
@@ -730,19 +754,31 @@ export function Navbar() {
                     Industries
                   </div>
                   <div className="pl-2 space-y-1 text-xs text-slate-600 dark:text-slate-400">
-                    <Link href="/whatsapp-chatbot-for-edutech" className="block py-1">
+                    <Link
+                      href="/whatsapp-chatbot-for-edutech"
+                      className="block py-1"
+                    >
                       Education
                     </Link>
-                    <Link href="/whatsapp-chatbot-for-travel-and-tourism" className="block py-1">
+                    <Link
+                      href="/whatsapp-chatbot-for-travel-and-tourism"
+                      className="block py-1"
+                    >
                       Travel
                     </Link>
                     <Link href="/banking-chatbots" className="block py-1">
                       BSFI
                     </Link>
-                    <Link href="/whatsapp-chatbot-for-real-estate" className="block py-1">
+                    <Link
+                      href="/whatsapp-chatbot-for-real-estate"
+                      className="block py-1"
+                    >
                       Real Estate
                     </Link>
-                    <Link href="/whatsapp-chatbot-for-health-wellness-brands" className="block py-1">
+                    <Link
+                      href="/whatsapp-chatbot-for-health-wellness-brands"
+                      className="block py-1"
+                    >
                       Healthcare
                     </Link>
                   </div>
@@ -757,7 +793,10 @@ export function Navbar() {
                     <Link href="/whatsapp-flows" className="block py-1">
                       WhatsApp Flows
                     </Link>
-                    <Link href="/white-label-whatsapp-reseller-panel" className="block py-1">
+                    <Link
+                      href="/white-label-whatsapp-reseller-panel"
+                      className="block py-1"
+                    >
                       WhatsApp Reseller
                     </Link>
                   </div>
@@ -783,7 +822,7 @@ export function Navbar() {
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 transition-transform",
-                    mobileExpanded["apis"] && "rotate-180"
+                    mobileExpanded["apis"] && "rotate-180",
                   )}
                 />
               </button>
@@ -792,7 +831,10 @@ export function Navbar() {
                   <Link href="/api/india" className="block py-1">
                     India
                   </Link>
-                  <Link href="/free-sms-gateway-developer-api" className="block py-1">
+                  <Link
+                    href="/free-sms-gateway-developer-api"
+                    className="block py-1"
+                  >
                     International
                   </Link>
                   <Link href="/whatsapp-business-api" className="block py-1">
@@ -843,7 +885,12 @@ export function Navbar() {
             </Link>
 
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-              <Button href="/registration" variant="radiant" size="lg" className="w-full">
+              <Button
+                href="/registration"
+                variant="radiant"
+                size="lg"
+                className="w-full"
+              >
                 Register & Get Free Test Credits
               </Button>
             </div>
