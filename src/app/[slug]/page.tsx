@@ -98,8 +98,50 @@ function getServiceImage(slug: string): string {
     case "whatsapp-flows":
     case "free-sms-gateway-developer-api":
       return "/assets/img/official-whatsapp-business-api-software.png";
+    case "rcs-messaging-services":
+    case "rcs-messaging-pricing":
+      return "/assets/doodle/RCS-Messaging-Services.png";
+    case "excel-plugin":
+    case "bulk-sms-plugin-for-shopify":
+    case "bulk-sms-plugin-for-woocommerce":
+    case "bulk-sms-plugin-for-magento":
+    case "zapier-sms-integrations-with-smsindiahub":
+      return "/assets/img/excel-plugins.png";
+    case "pricing":
+    case "prices":
+    case "go-digital-pricing":
+    case "promotional-sms-pricing-unlimited-validity":
+    case "transactional-sms-pricing":
+    case "sms-api-pricing":
+    case "social-media-marketing-pricing":
+      return "/assets/img/pricing.png";
+    case "dlt-registration":
+    case "complete-guide-to-dlt-template-registration":
+    case "dlt-content-templates-explained":
+    case "dlt-phase-2-template-registration":
+    case "dlt-registration-process":
+    case "dlt-registration-now-a-mandate":
+    case "dlt-support":
+    case "pe-tm-binding-chain-process-in-dlt-portal":
+    case "what-is-dlt-distributed-ledger-technology":
+    case "how-to-add-telemarketer-id-in-jio-dlt-for-pe-tm-binding-chain":
+    case "how-to-create-principal-entity-telemarketer-chain-on-airtel-dlt-portal":
+    case "how-to-add-telemarketer-in-vilpower-vodafone-dlt-for-pe-tm-binding-process":
+    case "how-to-add-telemarketer-in-bsnl-for-pe-tm-binding-chain":
+    case "how-to-add-telemarketer-in-tata-dlt-for-pe-tm-binding-chain":
+      return "/assets/img/transaction-confirmation.png";
+    case "lead-automation-software":
+    case "facebook-leads-automation":
+    case "google-leads-automation":
+    case "indiamart-lead-management-software":
+    case "trade-india-lead-management-software":
+    case "whatsapp-leads-automation":
+    case "website-contact-form-leads-automation":
+    case "sales-automation-software":
+    case "marketing-automation":
+      return "/assets/img/Capture-Leads-From-Various-Lead-Sources.png";
     default:
-      return "/assets/img/Fast-SMS-Delivery.png";
+      return "/assets/img/fast-bulk-sms-delivery-service.png";
   }
 }
 
@@ -190,7 +232,7 @@ export default function DynamicPage({ params }: Props) {
             <div className="pt-8 flex justify-center">
               <div className="relative h-64 sm:h-72 w-full max-w-xl overflow-hidden rounded-3xl bg-slate-50 p-4 shadow-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 transition-all hover:scale-[1.02]">
                 <Image
-                  src="/assets/img/Fast-SMS-Delivery.png"
+                  src="/assets/img/fast-bulk-sms-delivery-service.png"
                   alt={`Bulk SMS Gateway Infrastructure ${city.name}`}
                   fill
                   className="object-contain"

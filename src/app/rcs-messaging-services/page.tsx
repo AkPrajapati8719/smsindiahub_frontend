@@ -24,11 +24,18 @@ export default function RcsMessagingPage() {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Deliver app-like rich interactive experiences natively inside Android default messaging apps with verified checkmarks, dynamic horizontal carousels, and one-tap action chips.
+            Deliver app-like rich interactive experiences natively inside
+            Android default messaging apps with verified checkmarks, dynamic
+            horizontal carousels, and one-tap action chips.
           </p>
 
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/contact" variant="radiant" size="lg" icon={<ArrowRight className="h-5 w-5" />}>
+            <Button
+              href="/contact"
+              variant="radiant"
+              size="lg"
+              icon={<ArrowRight className="h-5 w-5" />}
+            >
               Get Verified RCS Profile
             </Button>
             <Button href="/contact" variant="outline" size="lg">
@@ -40,7 +47,7 @@ export default function RcsMessagingPage() {
           <div className="pt-8 flex justify-center">
             <div className="relative h-64 sm:h-80 w-full max-w-2xl overflow-hidden rounded-3xl bg-slate-50 p-4 shadow-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 transition-all hover:scale-[1.02]">
               <Image
-                src="/assets/img/Personalised-Message.png"
+                src="/assets/doodle/RCS-Messaging-Services.png"
                 alt="SMSIndiaHub RCS Business Rich Messaging Carousel"
                 fill
                 className="object-contain"

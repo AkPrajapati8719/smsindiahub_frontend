@@ -395,7 +395,6 @@ export function Footer() {
             {COMPANY_INFO.legalName}). All rights reserved.
           </div>
           <div className="flex flex-wrap gap-4 font-medium">
-            {/* <Link href="/clients" className="text-blue-600 font-semibold hover:underline">Happy Clients</Link> */}
             <Link href="/privacy-policy" className="hover:text-blue-600">
               Privacy Policy
             </Link>
